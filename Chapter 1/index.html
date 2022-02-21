@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 1</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Hello Vue</h1>
+    <div id="app">
+      <div v-if="showBooks">
+        <p>{{title}} - {{author}} - {{age}}</p>
+      </div>
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks"> Hide Books </span>
+        <span v-else> Show Books </span>
+      </button>
+      <div v-show="showBooks">Currently Showing Books</div>
+      <!-- if-else removes from dom, show only changes on css-->
+      <br />
+      <div class="box" @mouseover="handleEvent($event,5)">Mouse Enter</div>
+      <div class="box" @mouseleave="handleEvent">Mouse Leave</div>
+      <div class="box" @dblclick="handleEvent">Double Click</div>
+      <div class="box" @mousemove="handleMouseMove">Position - {{x}} {{y}}</div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

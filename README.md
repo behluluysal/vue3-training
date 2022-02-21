@@ -1,3 +1,8 @@
-# Build Apps with Vue 3 & Firebase
+# Includes:
 
-All files for the Vue 3 training &amp;
+- How to mount
+- How to return data to dom
+- How to use v-if, v-else, v-show
+- How to use events like mouseover, mouseleave etc
+
+- v-on shorcut: @
