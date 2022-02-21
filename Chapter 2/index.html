@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter 2</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <a :href="url" target="_blank">Google</a>
+      <div v-show="showBooks">Currently Showing Books</div>
+      <div v-if="showBooks">
+        <ul>
+          <li
+            v-for="book in books"
+            :class="{fav : book.isFav}"
+            @click="toggleFav(book)"
+          >
+            <img class="bookimage" :src="book.img" :alt="book.title" />
+            <p>{{book.title}} -</p>
+            <p>{{book.author}}</p>
+          </li>
+        </ul>
+      </div>
+      <button @click="toggleShowBooks">
+        <span v-if="showBooks"> Hide Books </span>
+        <span v-else> Show Books </span>
+      </button>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
